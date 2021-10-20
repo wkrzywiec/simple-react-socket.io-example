@@ -6,7 +6,6 @@ function App() {
   let socket = null
 
   useEffect(() => {
-        // socket = io('https://project-management-microservice-699.core-staging.umetrics.ninja/chat', {
         socket = io('http://localhost:8080/chuck', {
           transports: ['polling', 'websocket'],
         });
