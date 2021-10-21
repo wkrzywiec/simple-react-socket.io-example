@@ -16,7 +16,13 @@ function App() {
         });
     
         socket.on('fact', (data) => {
-          let str = '<p>' + new Date().toLocaleTimeString() + '&nbsp;&nbsp;&nbsp;&nbsp; ' + data + '</p>' 
+          let str = '<p> fact: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + new Date().toLocaleTimeString() + '&nbsp;&nbsp;&nbsp;&nbsp; ' + data + '</p>' 
+          document.getElementById('messege-output').innerHTML += str
+            
+        });
+
+        socket.on('factObj', (data) => {
+          let str = '<p> factObj: &nbsp;&nbsp;&nbsp;&nbsp;' + data.time + '&nbsp;&nbsp;&nbsp;&nbsp; ' + data.text + '</p>' 
           document.getElementById('messege-output').innerHTML += str
             
         });
